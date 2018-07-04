@@ -4,12 +4,8 @@
 @section('body-class', 'product-page')
 
 @section('content')
-<style media="screen">
-  .invalid-feedback{
-    color: red;
-  }
-</style>
-
+  <div id='token'>{{ csrf_token() }}</div>
+  <script src="{{asset ('/js/contact.js') }}" type="text/javascript"></script>
 <div class="header header-filter" style="background-image: url('{{ ('/img/fondo.jpg') }}');"></div>
 
 <div class="main main-raised">
@@ -52,51 +48,64 @@
         <div class="col-md-8 col-md-offset-2">
           <h2 class="text-center title">Contacto</h2>
           <h4 class="text-center description">Si necesita ayuda, escribanos su mensaje y lo antenderemos a la brevedad.</h4>
-          <form class="contact-form" method="POST" action="/contacto"> 
-            {{ csrf_field() }}
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group label-floating has-success">
-                  <label name="name" class="control-label">Nombre</label>
-                  <input type="text" class="form-control" name="name" id="name" required>
+          <div>
+            <div id="formcontact">
+              <div class="row">
+                <div class="col-md-6">
+                  <div id="nameContainer" class="form-group label-floating has-success">
+                    <label name="name" class="control-label">Nombre</label>
+                    <input id='name' class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div id="emailContainer" class="form-group label-floating has-success">
+                    <label  class="control-label">Email</label>
+                    <input id='email' type="email" class="form-control" name="email">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div id="phoneContainer" class="form-group label-floating has-success">
+                    <label name="phone" class="control-label">Teléfono</label>
+                    <input id='phone' class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div id="addressContainer" class="form-group label-floating has-success">
+                    <label name="address" class="control-label">Dirección</label>
+                    <input id='address' class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div id="messageContainer" class="form-group label-floating has-success">
+                    <label name="message" class="control-label">Consulta</label>
+                    <textarea class="form-control" rows="4" id="message"></textarea>
+                  </div>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group label-floating has-success">
-                  <label name="email" class="control-label">Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group label-floating has-success">
-                  <label name="phone" class="control-label">Teléfono</label>
-                  <input type="number" class="form-control" name="phone" id="phone" required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group label-floating has-success">
-                  <label name="adress" class="control-label">Dirección</label>
-                  <input class="form-control" type="text" name="adress" id="adress">
+              <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                  <button class="btn btn-primary btn-raised" id="send_contact" style="background: #365b22;">
+                    Enviar Consulta
+                  </button>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <div class="form-group label-floating has-success">
-              <label name="contact" class="control-label">Consulta</label>
-              <textarea class="form-control" rows="4" name="message" id="message" required></textarea>
-            </div>
-
-            <div class="row">
-              <div class="col-md-4 col-md-offset-4 text-center">
-                <button type="submit" id="sender" class="btn btn-primary btn-raised" style="background: #365b22;">
-                  Enviar Consulta
-                </button>
-              </div>
-            </div>
-          </form>
-          @if(session('message'))
-            <div class="alert alert-success">{{ session('message')}}</div>
-          @endif
+<div class="modal fade" style="position: absolute; top:30vh;" id="modalSent" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="">
+        <div class="modal-body">
+          <p id="modalMessage">Su consulta ha sido enviada con éxito.</p>
+        </div>
+        <div class="modal-footer">
+          <button id="ok" class="btn btn-info btn-simple">Volver a página principal.</button>
         </div>
       </div>
     </div>

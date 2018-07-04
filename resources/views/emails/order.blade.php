@@ -1,5 +1,4 @@
-
-  # Pedido
+# Pedido
 
 <p><strong>Nombre:</strong> {{ $data['name'] }}</p>
 

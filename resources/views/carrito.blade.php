@@ -100,10 +100,10 @@
     <div class="modal-content">
       <div class="">
         <div class="modal-body">
-          <p id="modalMessage">Su pedido ha sido enviado con éxito</p>
+          <p id="modalMessage">Su pedido ha sido enviado con éxito.</p>
         </div>
         <div class="modal-footer">
-          <button id="ok" class="btn btn-info btn-simple">Ir a productos</button>
+          <button id="ok" class="btn btn-info btn-simple">Ir a productos.</button>
         </div>
       </div>
     </div>

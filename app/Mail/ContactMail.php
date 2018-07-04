@@ -11,6 +11,12 @@ class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    /**
+     * Create a new message instance.
+     *
+     * @return void
+     */
+
     public $data;
 
     public function __construct($data)
@@ -20,9 +26,8 @@ class ContactMail extends Mailable
 
     public function build()
     {
-        return $this->subject($this->data['name'])
-            ->replyTo($this->data['email'])
-            ->markdown('emails.contact')
-        ;
+        return $this
+            ->subject('Consulta '.date('Y-m-d H:i:s'))
+            ->view('emails.contact');
     }
 }

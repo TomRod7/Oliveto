@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@welcome');
 Route::get('/quienes', 'HomeController@mostrar');
 Route::get('/contacto', 'ContactController@show');
+Route::post('/contacto', 'ContactController@sendMail');
 
 Auth::routes();
 
