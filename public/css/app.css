@@ -1,0 +1,55 @@
+#fondoh{
+  background-color: black;
+  height: 87vh;
+}
+
+#cosologin{
+  background: black;
+  color: #f3c94b;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f3c94b;
+}
+
+.input-group-addon{
+  color: #f3c94b;
+}
+
+#form-login{
+  background-color: black;
+  color: #f3c94b;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f3c94b;
+}
+
+#botonlo{
+  color: #f3c94b;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f3c94b;
+}
+.foto_texto{
+  width: 394px;
+  height: 249px;
+  float: right;
+  margin: 20px;
+}
+
+#td_texto{
+  text-align: justify;
+  width: 100%;
+  overflow: auto;
+}
+
+.pull-left a, a:hover, a:focus{
+  color: #f3c94b;
+}
+
+.signup-page .footer .copyright, .signup-page .footer a {
+    color: #f3c94b;
+}
+
+.header-filter:after {
+    background-color: rgba(0, 0, 0, 0);
+}

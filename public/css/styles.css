@@ -1,0 +1,169 @@
+#fondoh{
+  background-color: black;
+  height: 87vh;
+}
+
+#formnav{
+  background-color: black;
+  border-bottom: solid 2px #f3c94b;
+}
+
+.icon-bar{
+  color: #f3c94b;
+}
+
+.oliveto{
+  width: 135px;
+  margin-top: 12px;
+}
+
+.imagenfoo{
+  width: 100%;
+  margin-bottom: -34px;
+  height: 60px;
+}
+
+.logoa{
+  width: 62px;
+  margin-top: -14px;
+}
+
+.color{
+  color: #f3c94b;
+}
+
+#fondo{
+  background-color: black;
+}
+
+#contenedor1{
+  padding-top: 156px;
+  padding-bottom: 73px;
+}
+
+#row1{
+  padding-bottom: 77px;
+}
+
+#contenedor2{
+  padding-top: 10px;
+}
+
+#row2{
+  margin-left: -100px;
+  margin-right: -100px;
+}
+
+.items{
+  padding-top: 21px;
+}
+
+#botoncart{
+  margin-right: 18px;
+  background: #365b22;
+}
+
+#botonir{
+  background: #365b22;
+  margin-top: 50px;
+}
+
+#botonir a:hover, a:visited, a:link, a:active{
+  color: white;
+  text-decoration: none;
+}
+
+#mail{
+  margin-top: -90px;
+  margin-bottom: -150px;
+}
+
+#fondologin{
+  background-image: url('{{ ('/img/fondoo.jpg') }}');
+  background-size: cover;
+  background-position: top center;
+}
+
+#formcart{
+  margin-top: 85px;
+}
+
+#botontop{
+  background-color: green;
+  margin-bottom: 34px;
+}
+
+#botonverde{
+  background-color: green;
+}
+
+#cosologin{
+  background: black;
+  color: #f3c94b;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f3c94b;
+}
+
+.input-group-addon{
+  color: #f3c94b;
+}
+
+#form-login{
+  background-color: black;
+  color: #f3c94b;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f3c94b;
+}
+
+#botonlo{
+  color: #f3c94b;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f3c94b;
+}
+.foto_texto{
+  width: 394px;
+  height: 249px;
+  float: right;
+  margin: 20px;
+}
+
+#td_texto{
+  text-align: justify;
+  width: 100%;
+  overflow: auto;
+}
+
+.pull-left a, a:hover, a:focus{
+  color: #f3c94b;
+}
+
+.signup-page .footer .copyright, .signup-page .footer a {
+    color: #f3c94b;
+}
+
+.header-filter:after {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#tituloCart{
+  padding-bottom: 20px;
+}
+
+.importe{
+  padding-top: 18px;
+}
+
+.modal-header{
+  margin-bottom: -25px;
+}
+
+.modal-header h4{
+  padding-top: 14px;
+}
+
+.alinear{
+  text-align: right;
+}
