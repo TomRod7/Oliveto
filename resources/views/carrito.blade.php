@@ -22,14 +22,16 @@
               </div>
           </hr>
         </div>
-        <table class="table">
+        <table id='cart_table' class="table">
           <thead>
               <tr>
                   <th class="text-center"></th>
                   <th class="text-center">Producto</th>
                   <th style="padding-left: 13px;">Precio</th>
-                  <th>Cantidad</th>
-                  <th>SubTotal</th>
+                  <th></th>
+                  <th class="text-center">Cant.</th>
+                  <th></th>
+                  <th style="padding-top: 18px; text-align: right;">SubTotal</th>
                   <th></th>
               </tr>
           </thead>
@@ -40,8 +42,10 @@
                 </td>
                 <td style="padding-top: 18px" class="text-center" id="item_name"></td>
                 <td style="padding-top: 18px" id="item_price"></td>
-                <td style="padding-top: 18px; padding-left: 35px;" id="item_quantity"></td>
-                <td style="padding-top: 18px" id="item_subtotal"></td>
+                <td style="padding-top: 18px; padding-left: 5px; cursor: pointer;" class="text-center" ><i id='minus' class="material-icons">remove</i></td>
+                <td style="padding-top: 18px; width: 20px;" class="text-center" id="item_quantity"></td>
+                <td style="padding-top: 18px; padding-left: 5px; cursor: pointer;" class="text-center" ><i id='plus' class="material-icons">add</i></td>
+                <td style="padding-top: 18px; text-align: right;" id="item_subtotal"></td>
                 <td class="td-actions">
                     <div class="alinear">
                       <button id="item_delete" rel="tooltip" title="Eliminar Producto" class="btn btn-danger btn-simple btn-xs" style="padding-left: 27px;">
@@ -95,7 +99,7 @@
   </div>
 </div>
 
-<div class="modal fade" style="position: absolute; top:30vh;" id="modalSent" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" style="position: fixed; top:30vh;" id="modalSent" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="">

@@ -63,6 +63,8 @@
                     <input id='email' type="email" class="form-control" name="email">
                   </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-md-6">
                   <div id="phoneContainer" class="form-group label-floating has-success">
                     <label name="phone" class="control-label">Teléfono</label>
@@ -75,6 +77,8 @@
                     <input id='address' class="form-control">
                   </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-md-12">
                   <div id="messageContainer" class="form-group label-floating has-success">
                     <label name="message" class="control-label">Consulta</label>
@@ -97,7 +101,7 @@
   </div>
 </div>
 
-<div class="modal fade" style="position: absolute; top:30vh;" id="modalSent" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" style="position: fixed; top:30vh;" id="modalSent" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="">

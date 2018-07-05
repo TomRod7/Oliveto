@@ -2,17 +2,7 @@ var nameMensaje, emailMensaje, phoneMensaje, addressMensaje, messageMensaje;
 var regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
 $( window ).load(function() {
-  cartContainer = document.getElementById('cart_container');
-  cartRow = document.getElementById('cart_item');
-  var cartJSON = window.localStorage.getItem("cart");
-  if (cartJSON) {
-    cart = JSON.parse(cartJSON);
-    loadCart();
-  } else {
-    $('#modalSent').modal('show');
-    $('#modalMessage').html('El carrito está vacio, no ha seleccionado ningún producto para comprar.')
-  }
-  $('#send_contact').click(sendOrder);
+  $('#send_contact').click(sendContact);
   $('#ok').click(function(){
     window.location.replace('/');
   });
@@ -38,18 +28,12 @@ function attachMessages() {
   phoneMensaje.innerHTML = "El teléfono es obligatorio.";
   emailMensaje.innerHTML = "El email es obligatorio.";
   addressMensaje.innerHTML = "La dirección es obligatoria.";
-  messageMensaje.innetHTML = "Este campo es obligatorio";
+  messageMensaje.innerHTML = "Este campo es obligatorio";
   nameContainer.appendChild(nameMensaje);
   phoneContainer.appendChild(phoneMensaje);
   emailContainer.appendChild(emailMensaje);
   addressContainer.appendChild(addressMensaje);
   messageContainer.appendChild(messageMensaje);
-
-  if(this.name == "email"){
-    if(!regexMail.test(this.value)) {
-      emailMensaje.innerHTML = "Introducir un email válido.";
-    }
-  };
 }
 
 function sendContact() {
@@ -70,19 +54,22 @@ function sendContact() {
   if (!email) emailMensaje.style.display = "block";
   if (!address) addressMensaje.style.display = "block";
   if (!message) messageMensaje.style.display = "block";
-
-  if (name && phone && email && address && message)
+  var validEmail = regexMail.test(email);
+  if(!validEmail) {
+    emailMensaje.innerHTML = "Introducir un email válido.";
+    emailMensaje.style.display = "block";
+  }
+  if (name && phone && email && validEmail && address && message)
   {
-  $.ajax({
-    url: '/contacto',
-    type: 'POST',
-    data: {_token: CSRF_TOKEN, name: name, phone: phone, email: email, address: address, message: message},
-    dataType: 'JSON',
-    success: function (data) {
-        console.log(data);
-    }
-  });
-  window.localStorage.removeItem('cart');
-  $('#modalSent').modal('show');
+    $.ajax({
+      url: '/contacto',
+      type: 'POST',
+      data: {_token: CSRF_TOKEN, name: name, phone: phone, email: email, address: address, message: message},
+      dataType: 'JSON',
+      success: function (data) {
+          console.log(data);
+      }
+    });
+    $('#modalSent').modal('show');
   }
 }

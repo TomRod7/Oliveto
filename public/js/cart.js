@@ -3,7 +3,32 @@ var cartContainer;
 var cart;
 var nameMensaje, emailMensaje, phoneMensaje, addressMensaje;
 
+function scaleCart() {
+  var maxWidth = 550;
+  var $window = $(window);
+  var width = $window.width();
+  var height = $window.height();
+  var scale;
+
+  $('#cart_table').css({'-webkit-transform': 'top left'});
+  $('#cart_table').css({'transform-origin': 'top left'});
+
+
+  if(width >= maxWidth) {
+      $('#cart_table').css({'-webkit-transform': ''});
+      $('#cart_table').css({'transform': ''});
+      return;
+  }
+
+  scale =width/maxWidth;
+
+  $('#cart_table').css({'-webkit-transform': 'scale(' + scale + ')'});
+  $('#cart_table').css({'transform': 'scale(' + scale + ')'});
+}
+
 $( window ).load(function() {
+  scaleCart();
+  $(window).resize(scaleCart);
   cartContainer = document.getElementById('cart_container');
   cartRow = document.getElementById('cart_item');
   var cartJSON = window.localStorage.getItem("cart");
@@ -31,6 +56,22 @@ function loadCart() {
   $('#total').text('$ ' + total.toFixed(2));
 }
 
+function changeQuantity(e, value) {
+  var index = getChildIndex(e.target.parentElement.parentElement);
+  cart[index].quantity += value;
+  cart[index].quantity = Math.max(1, cart[index].quantity);
+  cart[index].subtotal = cart[index].quantity * cart[index].price;
+  window.localStorage.setItem("cart", JSON.stringify(cart))
+  loadCart();
+}
+
+function incQuantity(e) {
+    changeQuantity(e, 1);
+}
+
+function decQuantity(e) {
+    changeQuantity(e, -1);
+}
 
 function addItem(cartItem) {
   var row = cartRow.cloneNode(true);
@@ -41,6 +82,10 @@ function addItem(cartItem) {
   var quantity = row.querySelector('#item_quantity');
   var subtotal = row.querySelector('#item_subtotal');
   var itemDelete = row.querySelector('#item_delete');
+  var plus = row.querySelector('#plus');
+  plus.addEventListener('click', incQuantity);
+  var minus = row.querySelector('#minus');
+  minus.addEventListener('click', decQuantity);
   $(itemDelete).click(function(e) {
     var index = getChildIndex(e.target.parentElement);
     cart.splice(index, 1);

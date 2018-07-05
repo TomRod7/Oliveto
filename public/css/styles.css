@@ -1,3 +1,4 @@
+
 #fondoh{
   background-color: black;
   height: 87vh;
@@ -32,12 +33,14 @@
   color: #f3c94b;
 }
 
+
 #fondo{
+  min-height: 98vh;
   background-color: black;
 }
 
 #contenedor1{
-  padding-top: 156px;
+  padding-top: 22vh;
   padding-bottom: 73px;
 }
 
@@ -139,6 +142,7 @@
 .pull-left a, a:hover, a:focus{
   color: #f3c94b;
 }
+
 
 .signup-page .footer .copyright, .signup-page .footer a {
     color: #f3c94b;
