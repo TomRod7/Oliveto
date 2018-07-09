@@ -1,5 +1,31 @@
 var cart;
+
+function scaleProducts() {
+  var maxWidth = 600;
+  var $window = $(window);
+  var width = $window.width();
+  var height = $window.height();
+  var scale;
+
+  $('#products_table').css({'-webkit-transform': 'top left'});
+  $('#products_table').css({'transform-origin': 'top left'});
+
+
+  if(width >= maxWidth) {
+      $('#products_table').css({'-webkit-transform': ''});
+      $('#products_table').css({'transform': ''});
+      return;
+  }
+
+  scale =width/maxWidth;
+
+  $('#products_table').css({'-webkit-transform': 'scale(' + scale + ')'});
+  $('#products_table').css({'transform': 'scale(' + scale + ')'});
+}
+
 $( window ).load(function() {
+  scaleProducts();
+  $(window).resize(scaleProducts);
   var cartJSON = window.localStorage.getItem("cart");
   if (cartJSON) {
     cart = JSON.parse(cartJSON);
@@ -10,7 +36,7 @@ $( window ).load(function() {
   $('.btn-cart').on('click', function(ev){
     var id = $(this).val();
     $('#product_name').text( $(this).attr('data-name') );
-    $('#product_category').text( $(this).attr('data-category') );    
+    $('#product_category').text( $(this).attr('data-category') );
     $('#product_id').val(id);
     $('#quantity').val(1);
     $('#product_price').val( $(this).attr('data-price') );

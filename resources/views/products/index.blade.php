@@ -19,7 +19,7 @@
       @endif
       <div class="team">
         <div class="row">
-          <table class="table">
+          <table id='products_table' class="table">
             <thead>
               <tr>
                 <th class="text-center"></th>
