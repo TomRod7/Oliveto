@@ -4,7 +4,6 @@
 
 @section('body-class', 'landing-page')
 @section('content')
-<script src="{{asset ('/js/scale.js') }}" type="text/javascript"></script>
 <div class="container" id="contenedor1">
   <div class="row" id="row1">
     <div class="container" id="contenedor2">
