@@ -68,7 +68,7 @@
                 <div class="col-md-6">
                   <div id="phoneContainer" class="form-group label-floating has-success">
                     <label name="phone" class="control-label">Teléfono</label>
-                    <input id='phone' class="form-control">
+                    <input id='phone' class="form-control" type="number">
                   </div>
                 </div>
                 <div class="col-md-6">

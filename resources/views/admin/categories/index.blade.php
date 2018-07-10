@@ -4,6 +4,7 @@
 @section('body-class', 'product-page')
 
 @section('content')
+<script src="{{asset ('/js/scale.js') }}" type="text/javascript"></script>
 <div class="header header-filter" style="background-image: url('{{ asset('/img/fondo.jpg')  }}')">
 </div>
 
@@ -15,7 +16,7 @@
       <div class="team">
         <div class="row">
           <a href="{{ url('/admin/categories/create') }}" id="botontop" class="btn btn-primary btn-round">Nueva Categoría</a>
-          <table class="table">
+          <table id='admin_categories' class="table">
             <thead>
               <tr>
                 <th class="text-center">#</th>
@@ -36,7 +37,7 @@
                 </td>
                 <td class="td-actions text-center">
                   <form action="{{ url('/admin/categories/'.$category->id.'/delete') }}" method="post">
-                    {{ csrf_field() }}                    
+                    {{ csrf_field() }}
                     <a href="{{ url('/admin/categories/'.$category->id.'/edit') }}" rel="tooltip" title="Editar Categoría" class="btn btn-success btn-simple btn-xs">
                       <i class="fa fa-edit"></i>
                     </a>

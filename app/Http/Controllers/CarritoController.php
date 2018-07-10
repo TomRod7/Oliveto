@@ -26,11 +26,7 @@ class CarritoController extends Model
         $mail = new OrderMail($request->all());
         Mail::to('pabloandrioli77@gmail.com')->send($mail);
         return json_encode($mail);
-      }
-
-    public function details(){
-      return $this->hasMany(CartDetail::class);
-    }
+      }  
 
     public function getTotalAttribute(){
 

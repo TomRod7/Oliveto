@@ -62,4 +62,5 @@ function addToCart(e)
   cart.push(cartItem);
   window.localStorage.setItem("cart", JSON.stringify(cart));
   $('#modalAddtoCart').modal('toggle');
+  $('#msg_add').removeAttr('hidden');
 }

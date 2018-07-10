@@ -19,13 +19,14 @@
 
 	<!--     Fonts and icons     -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
 	<!-- CSS Files -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/material-kit.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/styles.css') }}" rel="stylesheet"/>
+		<link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
 
 
 		<style media="screen">
@@ -168,8 +169,6 @@
 
 
 </body>
-  <!--   Core JS Files   -->
-
 
 	<script>
 	$(function() {

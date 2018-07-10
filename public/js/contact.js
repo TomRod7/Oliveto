@@ -28,7 +28,7 @@ function attachMessages() {
   phoneMensaje.innerHTML = "El teléfono es obligatorio.";
   emailMensaje.innerHTML = "El email es obligatorio.";
   addressMensaje.innerHTML = "La dirección es obligatoria.";
-  messageMensaje.innerHTML = "Este campo es obligatorio";
+  messageMensaje.innerHTML = "Este campo es obligatorio.";
   nameContainer.appendChild(nameMensaje);
   phoneContainer.appendChild(phoneMensaje);
   emailContainer.appendChild(emailMensaje);
@@ -59,6 +59,7 @@ function sendContact() {
     emailMensaje.innerHTML = "Introducir un email válido.";
     emailMensaje.style.display = "block";
   }
+
   if (name && phone && email && validEmail && address && message)
   {
     $.ajax({

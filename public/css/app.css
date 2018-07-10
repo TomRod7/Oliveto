@@ -1,9 +1,9 @@
-#fondoh{
+#fondoh {
   background-color: black;
   height: 87vh;
 }
 
-#cosologin{
+#cosologin {
   background: black;
   color: #f3c94b;
   border-style: solid;
@@ -11,11 +11,11 @@
   border-color: #f3c94b;
 }
 
-.input-group-addon{
+.input-group-addon {
   color: #f3c94b;
 }
 
-#form-login{
+#form-login {
   background-color: black;
   color: #f3c94b;
   border-style: solid;
@@ -23,26 +23,26 @@
   border-color: #f3c94b;
 }
 
-#botonlo{
+#botonlo {
   color: #f3c94b;
   border-style: solid;
   border-width: 2px;
   border-color: #f3c94b;
 }
-.foto_texto{
+.foto_texto {
   width: 394px;
   height: 249px;
   float: right;
   margin: 20px;
 }
 
-#td_texto{
+#td_texto {
   text-align: justify;
   width: 100%;
   overflow: auto;
 }
 
-.pull-left a, a:hover, a:focus{
+.pull-left a, a:hover, a:focus {
   color: #f3c94b;
 }
 

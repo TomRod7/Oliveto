@@ -4,21 +4,19 @@
 @section('body-class', 'product-page')
 
 @section('content')
-  <div id='token'>{{ csrf_token() }}</div>
-  <script src="{{asset ('/js/cart.js') }}" type="text/javascript"></script>
+<div id='token'>{{ csrf_token() }}</div>
+<script src="{{asset ('/js/cart.js') }}" type="text/javascript"></script>
 <div class="header header-filter" style="background-image: url('{{ asset('/img/fondo.jpg')  }}')">
 </div>
 
 <div class="main main-raised">
   <div class="container">
-
     <div class="section">
         <h2 class="title text-center" id="tituloCart">Carrito de Compras</h2>
-
         <div id='msg_delete' hidden>
           <hr>
-              <div class="alert alert-success">
-                El Producto se ha eliminado del carrito de compras de manera exitosa.
+              <div class="alert alert-success text-center">
+                El producto se ha eliminado del carrito de compras de manera exitosa.
               </div>
           </hr>
         </div>
@@ -78,7 +76,7 @@
               <div class="col-md-6">
                 <div id="phoneContainer" class="form-group label-floating has-success">
                   <label name="phone" class="control-label">Teléfono</label>
-                  <input id='phone' class="form-control">
+                  <input id='phone' class="form-control" type="number">
                 </div>
               </div>
               <div class="col-md-6">

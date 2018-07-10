@@ -2,6 +2,7 @@ var cartRow;
 var cartContainer;
 var cart;
 var nameMensaje, emailMensaje, phoneMensaje, addressMensaje;
+var regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
 function scaleCart() {
   var maxWidth = 550;
@@ -130,6 +131,7 @@ function attachMessages() {
   phoneMensaje = mensaje.cloneNode();
   emailMensaje = mensaje.cloneNode();
   addressMensaje = mensaje.cloneNode();
+
   nameMensaje.innerHTML = "El nombre es obligatorio.";
   phoneMensaje.innerHTML = "El teléfono es obligatorio.";
   emailMensaje.innerHTML = "El email es obligatorio.";
@@ -156,8 +158,13 @@ function sendOrder() {
   if (!phone) phoneMensaje.style.display="block";
   if (!email) emailMensaje.style.display="block";
   if (!address) addressMensaje.style.display="block";
+  var validEmail = regexMail.test(email);
+  if(!validEmail) {
+    emailMensaje.innerHTML = "Introducir un email válido.";
+    emailMensaje.style.display = "block";
+  }
 
-  if (name && phone && email && address)
+  if (name && phone && email && validEmail && address)
   {
   $.ajax({
     url: '/carrito',

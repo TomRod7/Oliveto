@@ -4,8 +4,8 @@
 @section('body-class', 'product-page')
 
 @section('content')
-<div class="header header-filter" style="background-image: url('{{ asset('/img/fondo.jpg')  }}')">
-</div>
+<script src="{{asset ('/js/scale.js') }}" type="text/javascript"></script>
+<div class="header header-filter" style="background-image: url('{{ asset('/img/fondo.jpg')  }}')"></div>
 
 <div class="main main-raised">
   <div class="container">
@@ -15,7 +15,7 @@
           <div class="team">
             <div class="row">
               <a href="{{ url('/admin/products/create') }}" id="botontop" class="btn btn-primary btn-round">Nuevo Producto</a>
-              <table class="table">
+              <table id='admin_products' class="table">
                 <thead>
                     <tr>
                         <th class="text-center">Imagen</th>

@@ -6,17 +6,18 @@
 @section('content')
 <script src="{{asset ('/js/addCart.js') }}" type="text/javascript"></script>
 <div class="header header-filter" style="background-image: url('{{ asset('/img/fondo.jpg')  }}')"></div>
+
 <div class="main main-raised">
   <div class="container">
     <div class="section text-center">
       <h2 class="title">Listado de Productos</h2>
-      @if (session('notification'))
+      <div id='msg_add' hidden>
         <hr>
-          <div class="alert alert-success">
-              {{ session('notification') }}
-          </div>
-        <hr>
-      @endif
+            <div class="alert alert-success">
+              El producto se ha cargado al carrito de compras de manera exitosa.
+            </div>
+        </hr>
+      </div>
       <div class="team">
         <div class="row">
           <table id='products_table' class="table">
@@ -69,7 +70,6 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h3 class="modal-title" id="myModalLabel">Selecciona la cantidad que desea agregar.</h3>
         <h4 id="product_category"></h4>
-        <h5 id="product_name"></h5>
       </div>
       <div class="">
         {{ csrf_field() }}
@@ -77,7 +77,8 @@
         <input type="hidden" id="product_price">
         <input type="hidden" id="product_image">
         <div class="modal-body">
-          <input name="quantity" type="number" id="quantity" value="1" class="form-control" style="background-image: linear-gradient(#365b22, #365b22); margin-top: -32px; margin-bottom: -2px;">
+          <h5 id="product_name"></h5>
+          <input name="quantity" type="number" id="quantity" value="1" min="0" oninput="validity.valid||(value='');" class="form-control text-center">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancelar</button>
@@ -87,6 +88,5 @@
     </div>
   </div>
 </div>
-
 @include('includes.footer')
 @endsection
