@@ -15,7 +15,7 @@
         <div class="col-md-8 col-md-offset-2">
           <h2 class="title">Oliveto | Contacto</h2>
           <h5 class="description">Nuestra atención y asesoramiento es personalizado. <br>
-            Envío sin cargo en C.A.B.A. para compras superiores a $2000. Se realizan envíos al interior.</h5>
+            Envío sin cargo en C.A.B.A. para compras superiores a $2200. Se realizan envíos al interior.</h5>
         </div>
       </div>
       <div class="features">
